@@ -2,11 +2,31 @@ package deber.metodos.string;
 
 import java.util.Scanner;
 
-public class Estudiante extends CedulaEstudiante {
+public class Estudiante  {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner lector= new Scanner(System.in);
+		DatosEstudiante estudiante1=new DatosEstudiante();
+		estudiante1.setCedula(12334);
+		estudiante1.setNombre("Fernando");
+		
+		DatosEstudiante estudiante2=new DatosEstudiante();
+		estudiante2.setCedula(2345);
+		estudiante2.setNombre("Sofia");
+		
+		DatosEstudiante estudiante3=new DatosEstudiante();
+		estudiante3.setCedula(3333);
+		estudiante3.setNombre("Marcelo");
+		
+		DatosEstudiante estudiante4=new DatosEstudiante();
+		estudiante4.setCedula(4444);
+		estudiante4.setNombre("Claudia");
+		
+		DatosEstudiante estudiante5=new DatosEstudiante();
+		estudiante5.setCedula(5555);
+		estudiante5.setNombre("Araceli");
+		
 		
 		int op=0;
 		do {
@@ -21,29 +41,26 @@ public class Estudiante extends CedulaEstudiante {
 			
 		   if (op==1) {
 				System.out.println("Ingrese cedula primer Estudiante");
-				String cedulaEstudiante1=lector.next();
+				int cedulaEstudiante1=lector.nextInt();
 				System.out.println("Ingrese cedula segundo Estudiante");
-				String cedulaEstudiante2=lector.next();
+				int cedulaEstudiante2=lector.nextInt();
 				System.out.println("Ingrese cedula tercer Estudiante");
-				String cedulaEstudiante3=lector.next();
+				int cedulaEstudiante3=lector.nextInt();
 				System.out.println("Ingrese cedula cuarto Estudiante");
-				String cedulaEstudiante4=lector.next();
+				int cedulaEstudiante4=lector.nextInt();
 				System.out.println("Ingrese cedula quinto Estudiante");
-				String cedulaEstudiante5=lector.next();
+				int cedulaEstudiante5=lector.nextInt();
 				
-//				
-				System.out.println(cedulaEstudiante1);
-				System.out.println(cedulaEstudiante2);
-				System.out.println(cedulaEstudiante3);
-				System.out.println(cedulaEstudiante4);
-				System.out.println(cedulaEstudiante5);
-				System.out.println("**********************************************");
-				String estudiante[]=new String[5];
-				estudiante[0]=cedulaEstudiante1;
-				estudiante[1]=cedulaEstudiante2;
-				estudiante[2]=cedulaEstudiante3;
-				estudiante[3]=cedulaEstudiante4;
-				estudiante[4]=cedulaEstudiante5;
+				DatosEstudiante estudiante[]=new DatosEstudiante[5];
+				estudiante[0]=estudiante1;
+				estudiante[1]=estudiante2;
+				estudiante[2]=estudiante3;
+				estudiante[3]=estudiante4;
+				estudiante[4]=estudiante5;
+				
+				int selec = lector.nextInt();
+				int cedula = lector.nextInt();
+				
 				
 		   }
 			if(op==2) {
@@ -53,7 +70,6 @@ public class Estudiante extends CedulaEstudiante {
 				
 				boolean cedulaEstudiante=(boolean) cedula.contains(cedula);
 				System.out.println("se encuentra en el vector: "+cedulaEstudiante);
-//				
 			}
 			boolean resultado = false;
 			if(resultado==true) {
