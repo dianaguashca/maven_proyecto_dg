@@ -7,79 +7,71 @@ public class Estudiante  {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner lector= new Scanner(System.in);
+		
 		DatosEstudiante estudiante1=new DatosEstudiante();
-		estudiante1.setCedula(12334);
-		estudiante1.setNombre("Fernando");
+		estudiante1.setCedula("1111");
+		
 		
 		DatosEstudiante estudiante2=new DatosEstudiante();
-		estudiante2.setCedula(2345);
-		estudiante2.setNombre("Sofia");
+		estudiante2.setCedula("2222");
+		
 		
 		DatosEstudiante estudiante3=new DatosEstudiante();
-		estudiante3.setCedula(3333);
-		estudiante3.setNombre("Marcelo");
+		estudiante3.setCedula("3333");
+		
 		
 		DatosEstudiante estudiante4=new DatosEstudiante();
-		estudiante4.setCedula(4444);
-		estudiante4.setNombre("Claudia");
+		estudiante4.setCedula("4444");
+		
 		
 		DatosEstudiante estudiante5=new DatosEstudiante();
-		estudiante5.setCedula(5555);
-		estudiante5.setNombre("Araceli");
+		estudiante5.setCedula("5555");
 		
-		
-		int op=0;
+		DatosEstudiante estudiante[]=new DatosEstudiante[5];
+		estudiante[0]=estudiante1;
+		estudiante[1]=estudiante2;
+		estudiante[2]=estudiante3;
+		estudiante[3]=estudiante4;
+		estudiante[4]=estudiante5;
+		int op = 0;
 		do {
-		    System.out.println("**********************************************");
+		 System.out.println("**********************************************");
 			System.out.println("       1.Ingresar estudiante");
 			System.out.println("       2.buscar estudiante ");
 			System.out.println("       3.-Salir ");
 			System.out.println("***********************************************");
 			System.out.println("       Seleccionar opcion");
-		
-			op=lector.nextInt();
 			
-		   if (op==1) {
-				System.out.println("Ingrese cedula primer Estudiante");
-				int cedulaEstudiante1=lector.nextInt();
-				System.out.println("Ingrese cedula segundo Estudiante");
-				int cedulaEstudiante2=lector.nextInt();
-				System.out.println("Ingrese cedula tercer Estudiante");
-				int cedulaEstudiante3=lector.nextInt();
-				System.out.println("Ingrese cedula cuarto Estudiante");
-				int cedulaEstudiante4=lector.nextInt();
-				System.out.println("Ingrese cedula quinto Estudiante");
-				int cedulaEstudiante5=lector.nextInt();
-				
-				DatosEstudiante estudiante[]=new DatosEstudiante[5];
-				estudiante[0]=estudiante1;
-				estudiante[1]=estudiante2;
-				estudiante[2]=estudiante3;
-				estudiante[3]=estudiante4;
-				estudiante[4]=estudiante5;
-				
-				int selec = lector.nextInt();
-				int cedula = lector.nextInt();
-				
-				
+		   op=lector.nextInt();
+		   if(op==1) {
+			   System.out.println("Ingrese cedula del Estudiante");
+			   op=lector.nextInt();
 		   }
-			if(op==2) {
-				
-				System.out.println("Se solicita la cedula del estudiante");
-				String cedula=lector.next();
-				
-				boolean cedulaEstudiante=(boolean) cedula.contains(cedula);
-				System.out.println("se encuentra en el vector: "+cedulaEstudiante);
+		   
+		   if(op==2) {
+			   
+			   System.out.println("Ingrese la cedula a buscar");
+			   op=lector.nextInt();
+			   
+			String cedulaBuscar="1111";
+			boolean respuesta=false;
+			for(int i=0;i<5;i++) {
+				DatosEstudiante estudiantes=estudiante[i];
+				String cedulaDelEstudiante=estudiantes.getCedula();
+				boolean respuestaLocal=cedulaBuscar.equals(cedulaDelEstudiante);
+				if(respuestaLocal==true) {
+					respuesta=true;
+				}
 			}
-			boolean resultado = false;
-			if(resultado==true) {
-				System.out.println("el Estudiante existe");
-			}else {
-				System.out.println("No existe el estudiante");
-			}
+			if(respuesta==true) {
+				System.out.println("El estudiante si existe");
 			
-		  }while(op!=3) ;
+		  }else {
+			  System.out.println("El estudiante no existe");
+		  }
+		   }
+		  
+		}while(op!=3) ;
 			System.out.println("hasta pronto");
 	}
-
 }
