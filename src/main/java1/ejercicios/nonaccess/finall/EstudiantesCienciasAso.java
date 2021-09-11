@@ -1,5 +1,8 @@
 package ejercicios.nonaccess.finall;
 
-public class EstudiantesCienciasAso {
+//no se puede extender de una clase final
+
+public class EstudiantesCienciasAso extends EstudianteCiencias {
 
 }
+ 
